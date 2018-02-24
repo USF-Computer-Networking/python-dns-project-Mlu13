@@ -12,20 +12,23 @@ import sys
 import dns.resolver
 
 def main():
-    print("Please enter a domian name and type one option from --AAAA/--MX/--A")
+    if(len(sys.argv) != 3 ):
+        print('You enter the wrong command')
+    else:
+        print("Please enter a domian name and type one option from --AAAA/--MX/--A")
 
-    program_name = sys.argv[0]
-    domainName = sys.argv[1]
-    action = sys.argv[2]
+        program_name = sys.argv[0]
+        domainName = sys.argv[1]
+        action = sys.argv[2]
 
     #print(domainName)
     #print(action)
     # assert action in ['--AAAA','--MX', '--APL']
-    if( action in ['--AAAA','--MX', '--A']):
+        if( action in ['--AAAA','--MX', '--A']):
         #for a in action:
-        process(domainName,action)
-    else:
-        print('Please reselect command')
+            process(domainName,action)
+        else:
+            print('Please reselect command')
 
 
 def process(domainName, action): 
